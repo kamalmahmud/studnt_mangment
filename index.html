@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Student Management System</h1>
+        </header>
+
+        <section id="course-management" class="section">
+            <div class="section-title">
+                <h2>Course Management</h2>
+            </div>
+            <div class="form-grid">
+                <input type="text" id="course-name" placeholder="Enter Course Name">
+                <input type="text" id="grading-scale" placeholder="Grading Scale (AA:90-100, BA:80-89)" required>
+                <button id="add-course-btn">Add Course</button>
+            </div>
+        </section>
+
+        <section id="student-input" class="section">
+            <div class="section-title">
+                <h2>Student Information</h2>
+            </div>
+            <form id="student-form">
+                <div class="form-grid">
+                    <select id="course-selector">
+                        <option value="">Select a Course</option>
+                    </select>
+                    <input type="text" id="student-id" placeholder="Student ID" required>
+                    <input type="text" id="student-name" placeholder="First Name" required>
+                    <input type="text" id="student-surname" placeholder="Last Name" required>
+                    <input type="number" id="midterm-score" placeholder="Midterm Score" min="0" max="100" required>
+                    <input type="number" id="final-score" placeholder="Final Score" min="0" max="100" required>
+                    <button type="submit">Add Performance</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="student-results" class="section">
+            <div class="section-title">
+                <h2>Student Results</h2>
+            </div>
+            <div class="filter-buttons">
+                <button id="all-students-btn" class="active">All Students</button>
+                <button id="passed-students-btn">Passed Students</button>
+                <button id="failed-students-btn">Failed Students</button>
+            </div>
+            <div class="table-container">
+                <table class="student-results-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Midterm</th>
+                            <th>Final</th>
+                            <th>Total Score</th>
+                            <th>Letter Grade</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-responsive">
+                        <!-- Dynamically populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="course-statistics" class="section">
+            <div class="section-title">
+                <h2>Course Statistics</h2>
+            </div>
+            <div id="statistics-container">
+                <div>
+                    <p>Passed Students: <span id="passed-count">0</span></p>
+                    <p>Failed Students: <span id="failed-count">0</span></p>
+                    <p>Class Mean Score: <span id="class-mean">0.00</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="search-section" class="section">
+            <div class="section-title">
+                <h2>Search Students</h2>
+            </div>
+            <div class="form-grid">
+                <input type="text" id="search-input" placeholder="Search by Name, Surname, or Student ID">
+            </div>
+            <div id="search-results">
+                <!-- Search results will be dynamically populated -->
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+</html>
